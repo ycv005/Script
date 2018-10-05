@@ -1,2 +1,2 @@
 # Useful-Script
-Collection of the Useful script, helpful in day to day task.
+Collection of the Useful script, helpful in task automation.
