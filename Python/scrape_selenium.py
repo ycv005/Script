@@ -38,12 +38,15 @@ def main(Keyword):
     submitButton.click()
 
     time.sleep(4)   #sleep for the form submission
-    Keyword = Keyword.split()
-    Keyword= "%20".join(Keyword)
-    # print(type(Keyword))
-    urlpage = "https://bestpractice.bmj.com/search?q=" + Keyword
-    driver.get(urlpage) #navigate to page behind login
-    # driver.execute_script("window.scrollTo(0, document.body.scrollHeight);var lenOfPage=document.body.scrollHeight;return lenOfPage;")
+    driver.get("https://bestpractice.bmj.com/")
+    time.sleep(1)
+
+    searchBar = driver.find_element_by_id("q")
+    searchButton = driver.find_element_by_id("mainSearchBtn")
+
+    searchBar.send_keys(Keyword)
+    searchButton.click()
+
     driver.execute_script("window.scrollTo(0, 200)");
     innerHTML = driver.execute_script("return document.body.innerHTML") #returns the inner HTML as a string
 
@@ -69,8 +72,6 @@ def main(Keyword):
             if "topics/en-gb/" in l and "pdf" in l:
                 links.append(l)
 
-    # # print(links)
-    # # print(numbers)
 
     fp = webdriver.FirefoxProfile()
     fp.set_preference("browser.download.folderList", 1);
@@ -109,5 +110,5 @@ def main(Keyword):
     time.sleep(10)
     driver.quit()
 
-# Keyword =
-main(Keyword= "carcinoma")
+Keyword = "Acute lymphocytic leukaemia"
+main(Keyword)
