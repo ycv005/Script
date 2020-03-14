@@ -13,7 +13,7 @@ def to_dic(l):
     return l
 
 # reading csv file 
-with open(r"C:\Users\asus\Downloads\Edge\annotation.csv", 'r') as csvfile: 
+with open(r"C:\Users\asus\Downloads\Edge\dataset.csv", 'r') as csvfile: 
     # creating a csv reader object 
     csvreader = csv.reader(csvfile)
       
@@ -28,7 +28,7 @@ with open(r"C:\Users\asus\Downloads\Edge\annotation.csv", 'r') as csvfile:
 # print(fields)
 # print(rows[:5])
 
-with open(r"C:\Users\asus\Downloads\Edge\food_dataset.csv", 'w',newline="") as csvfile: 
+with open(r"C:\Users\asus\Downloads\Edge\new_dataset.csv", 'w',newline="") as csvfile: 
     # creating a csv writer object 
     csvwriter = csv.writer(csvfile) 
     # writing the fields 
