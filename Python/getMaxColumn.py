@@ -20,7 +20,7 @@ with open(r"C:\Users\asus\Downloads\Edge\GunviolenceSA.csv", 'r') as csvfile:
     for i,row in enumerate(csvreader):
         if int(row[6])+int(row[7])>m:
             m=int(row[6])+int(row[7])
-            r = i
+            r = row
         rows.append(row) 
 
-print("Max voilence happens on-",row[0])
+print("Max voilence happens on-",r[0])
